@@ -9,7 +9,7 @@ router.use((req, res, next) => {
 
 router.post('/send', (req,res)=> {
   
-    const responseJson = sendUserMessage(req,res,messages)
+    const responseJson = sendUserMessage(req,res)
            
     res.send(responseJson);
 })
