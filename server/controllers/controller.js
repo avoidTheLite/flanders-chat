@@ -1,9 +1,12 @@
-export function sendUserMessage(req, res) {
+import { sendmsg } from "../services/sendMessage.js";
 
-    const responseOutput ={
-        //Add user message to existing conversation
-        //Call chat GPT function from here
+export function sendUserMessage(req, res, messages) {
+   
+    const userResponse = {};
+    userResponse.role = "user";
+    userResponse.content = req.body.userMessage
+    messages.push(userResponse);
+    chatGPTMessage = sendmsg(messages);
 
-    };
 return responseOutput
 };
