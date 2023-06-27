@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "name": "risk-die-rest",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Learning app with the intent of supporting rest calls to roll risk dice.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Justin F",
+  "license": "ISC",
+  "keywords": [
+    "risk",
+    "die"
+  ]
+}
