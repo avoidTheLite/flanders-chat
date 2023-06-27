@@ -1,12 +1,9 @@
-export function controllerFunction1(req, res) {
-//we pretend this retrieves some data
-    const controllerData1 ={
+export function sendUserMessage(req, res) {
 
-    ID: req.params['ID'],
-    name: "Robert Pulson",
-    type: 'example',
-    url: "https://en.wikipedia.org/wiki/Special:Random"
+    const responseOutput ={
+        //Add user message to existing conversation
+        //Call chat GPT function from here
 
     };
-return controllerData1
+return responseOutput
 };

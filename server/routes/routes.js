@@ -1,15 +1,15 @@
 import { Router } from 'express';
 const router = Router();
-import {controllerFunction1} from '../controllers/controller.js';
+import {sendUserMessage} from '../controllers/controller.js';
 
 router.use((req, res, next) => {
     //pre-route prep
     next()
 })
 
-router.get('/route1/:ID', (req,res)=> {
+router.post('/send', (req,res)=> {
     
-    const responseJson = controllerFunction1(req,res)
+    const responseJson = sendUserMessage(req,res)
            
     res.send(responseJson);
 })
