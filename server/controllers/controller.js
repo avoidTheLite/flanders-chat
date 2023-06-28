@@ -14,8 +14,8 @@ export async function sendUserMessage(req, res) {
     userResponse.role = "user";
     userResponse.content = req.body.userMessage;
     messages.push(userResponse);
-    const chatGPTMessage = sendmsg(messages);
-    console.log(chatGPTMessage);
+    await sendmsg(messages).catch(error => console.error(error));
+        const chatGPTMessage = messages.slice(-1);
 
 return chatGPTMessage
 };

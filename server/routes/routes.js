@@ -12,11 +12,9 @@ router.use((req, res, next) => {
 
 router.post('/send', jsonParser, async (req,res)=>  {
   
-    const responseJson = await sendUserMessage(req,res)
+await sendUserMessage(req,res)
     .then(function(responseJson){
         const agentResponse = responseJson;
-        console.log(responseJson);
-        console.log(JSON.stringify(agentResponse));
         res.send(JSON.stringify(agentResponse));
 })
 })

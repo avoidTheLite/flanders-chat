@@ -16,15 +16,14 @@ export async function sendmsg(messages) {
         messages:messages,
         max_tokens:49
     };
-    console.log(API_KEY);
-    console.log(API_URL);
     try {
-        const response = await axios.post(API_URL, data,{headers})
+        await axios.post(API_URL, data,{headers})
         .then(function(response){
-        const chatGPTresponse = response.data.choices[0].message.content;
+        const chatGPTresponse = response.data.choices[0].message;
         messages.push(chatGPTresponse)
+
     });
-    return chatGPTresponse
+    return
     }
 catch (error) {
     console.error('Error:', error);
