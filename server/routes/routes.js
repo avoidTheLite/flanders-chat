@@ -1,6 +1,6 @@
 import { Router } from 'express';
 const router = Router();
-import {sendUserMessage} from '../controllers/controller.js';
+import {sendUserMessage, viewtranscript} from '../controllers/controller.js';
 import bodyParser from "body-parser";
 
 var jsonParser = bodyParser.json();
@@ -19,9 +19,11 @@ await sendUserMessage(req,res)
 })
 })
 
-router.get('/route2', (req,res) => {
-    //do something with a static route 
-    res.send('/route2 doesnt have a controller, but you can call it anyways...');
+router.get('/viewtranscript', (req,res) => {
+
+    res.send(viewtranscript(req,res));
+    
+    
 })
 
 export default router
