@@ -9,10 +9,10 @@
   "name": "risk-die-rest",
   "version": "1.0.0",
   "type": "module",
-  "description": "Learning app with the intent of supporting rest calls to roll risk dice.",
+  "description": "NodeJS integration with Open AI APIs. Storing conversation locally.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "devStart": "nodemon server.js"
   },
   "author": "Justin F",
   "license": "ISC",
