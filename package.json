@@ -19,5 +19,8 @@
   "keywords": [
     "risk",
     "die"
-  ]
+  ],
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }
