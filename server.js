@@ -7,8 +7,10 @@ const app = express();
 
 
 
-await mongoose.connect('mongodb://127.0.0.1:27017/messages')
-
+await mongoose.connect(process.env.DATABASE_URL)
+const db = mongoose.connection
+db.on('error', (error) => console.error(error))
+db.once('open', () => console.log('Connected to Databse'))
 
 
 import router from './server/routes/routes.js';

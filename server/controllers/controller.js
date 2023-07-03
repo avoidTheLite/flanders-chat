@@ -1,4 +1,5 @@
 import { sendmsg } from "../services/sendMessage.js";
+import messageModel from '../models/messagesdb.js'
 
 
 const messages = [
@@ -16,6 +17,10 @@ export async function sendUserMessage(req, res) {
     messages.push(userResponse);
     await sendmsg(messages).catch(error => console.error(error));
         const chatGPTMessage = messages.slice(-1);
+        const lastAgentMessage = new messageModel(chatGPTMessage[0])
+        try{            
+            const saveAgentMessage = await lastAgentMessage.save()
+        } catch(error){console.log(error)}
 
 return chatGPTMessage
 };
