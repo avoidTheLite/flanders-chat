@@ -16,6 +16,7 @@ db.once('open', () => console.log('Connected to Databse'))
 import router from './server/routes/routes.js';
 const port = process.env.PORT;
 
+
 app.use('/', router);
 
 

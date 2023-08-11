@@ -4,7 +4,15 @@ an Open AI integration to practice connecting to external services
 
 To run:
 
-node server.js
+Start mongoDB
+sudo systemctl start mongod
+
+Verify it's running using:
+ps aux | grep mongod
+
+npm run devStart
+
+
 
 curl --location 'http://localhost:5280/send' \
 --header 'Content-Type: application/json' \
