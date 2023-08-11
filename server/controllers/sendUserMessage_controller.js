@@ -21,7 +21,7 @@ export async function sendUserMessage(req, res) {
 
     const chatGPTMessage = messagesFromDB.messages.slice(-1);
     try {
-        const updatedMessages = await conversationModel.findByIdAndUpdate(conversationID, messagesFromDB, {new: true});
+        await conversationModel.findByIdAndUpdate(conversationID, messagesFromDB, {new: true});
     } catch (error) {console.log(error)
         
     }

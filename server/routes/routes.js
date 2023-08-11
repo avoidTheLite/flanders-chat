@@ -2,9 +2,7 @@ import { Router } from 'express';
 const router = Router();
 import controllers from '../controllers/index.js';
 import bodyParser from "body-parser";
-import messageModel from '../models/messagesdb.js'
 import { createNewConversation } from '../controllers/createnewConversation_controller.js';
-import conversationModel from '../models/conversations.js';
 
 var jsonParser = bodyParser.json();
 
@@ -42,18 +40,12 @@ router.get('/startNewConversation', async (req, res) => {
 
 })
 
-router.get('/viewtranscript', (req,res) => {
 
-    res.send(controllers.viewtranscript(req,res, messages));
-    
-    
-})
-
-router.get('/viewalltranscripfromDB/:conversationID', jsonParser, async (req,res) => {
+router.get('/viewtranscript/:conversationID', async (req,res) => {
     const conversationID = req.params['conversationID'];
     
 try {
-    const messagefromDB =await conversationModel.findById(conversationID)
+    const messagefromDB = await controllers.viewTranscript(req,res, conversationID)
     res.json(messagefromDB)
 } catch (err) {
 res.status(500).json({message:err.message})
