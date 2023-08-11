@@ -49,10 +49,12 @@ try {
 } catch (err) {
     const message = `Failed to retrieve conversation with conversationID = ${conversationID}. Details: Server returned ${err.message}`
     res.send(errorFormatter(message, 500))
-}
-    
-    
+}    
 })
+
+router.get('/viewalltranscripts'), async (req,res) => {
+
+}
 
 
 export default router
