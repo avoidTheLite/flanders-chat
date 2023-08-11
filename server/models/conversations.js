@@ -1,7 +1,18 @@
 import {mongoose} from 'mongoose'
 
+const reshapingOptions = {
+    virtuals: true,
+    versionKey: false,
+    transform: function(doc, ret) {
+        delete ret._id;
+        return ret;
+    }
+
+}
+
+
 const conversationSchema = new mongoose.Schema({
-    messages:[{
+    messages:{
         type: Array,
         required: true,
         nested:{
@@ -16,8 +27,8 @@ const conversationSchema = new mongoose.Schema({
 
 
         }
-    }]
-}
+    }
+}, { toJSON: reshapingOptions}
 )
 
 const conversationModel = mongoose.model('Conversation',conversationSchema)
