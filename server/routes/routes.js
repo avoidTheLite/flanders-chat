@@ -8,12 +8,7 @@ import { errorFormatter } from '../services/responseAPI.js';
 
 var jsonParser = bodyParser.json();
 
-const messages = [
-    {
-        "role": "system",
-        "content": "You are a helpful assistant."
-    }
-  ];// TODO: REMOVE: needed until we exclusivly pull from DB 
+
   
 
 router.use((req, res, next) => {
@@ -22,7 +17,7 @@ router.use((req, res, next) => {
 })
 
 router.post('/send', jsonParser, async (req,res)=>  {  
-await controllers.sendUserMessage(req,res, messages)
+await controllers.sendUserMessage(req,res)
     .then(function(responseJson){
         const results = responseJson;
         const message = "Successfully sent and received chat with GPT"
