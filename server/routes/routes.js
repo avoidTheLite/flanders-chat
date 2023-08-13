@@ -6,7 +6,7 @@ import { createNewConversation } from '../controllers/createnewConversation_cont
 import { successFormatter } from '../services/responseAPI.js';
 import { errorFormatter } from '../services/responseAPI.js';
 
-var jsonParser = bodyParser.json();
+const jsonParser = bodyParser.json();
 
 
   

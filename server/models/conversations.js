@@ -10,7 +10,6 @@ const reshapingOptions = {
 
 }
 
-
 const conversationSchema = new mongoose.Schema({
     messages:{
         type: Array,
